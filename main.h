@@ -11,5 +11,6 @@ int printf_char(va_list val);
 int printf_string(va_list val);
 int _printf(const char *fromat, ...);
 int printf_dec(va_list args);
+int _putchar(char character);
 
 #endif
