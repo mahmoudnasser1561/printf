@@ -12,7 +12,7 @@
  * @f: the conversion specifier function
  */
 
-typedef struct fromat
+typedef struct format
 {
 	char *id;
 	int (*f)();
