@@ -1,22 +1,18 @@
 #include "main.h"
-
 /**
  * _printf - is a function that takes the format and selects the correct function to print
  * @format: identifier to look for.
  * Return: the length of the string.
  */
-
-
 int _printf(const char * const format, ...);
 {
-
-convert_match m[][2] = {
-	{"%s", printf_string},
-	{"%c", printf_char},
-	{"%%", print_mod},
-	{"%d", printf_int},
-	{"%i", printf_dec}
-};
+	convert_match m[] = {
+		{"%s", printf_string},
+		{"%c", printf_char},
+		{"%%", print_mod},
+		{"%d", printf_int},
+		{"%i", printf_dec}
+	};
 
 
 va_list arguments;
