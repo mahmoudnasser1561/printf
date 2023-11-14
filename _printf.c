@@ -8,22 +8,17 @@
 
 
 int _printf(const char * const format, ...);
-
-typedef struct format
 {
-	char *id;
-	int (*f) ();
-}	convert_match;
 
 convert_match m[][2] = {
 	{"%s", printf_string},
 	{"%c", printf_char},
 	{"%%", print_mod},
 	{"%d", printf_int},
-	{"%i",printf_dec}
+	{"%i", printf_dec}
 };
-int _printf(const char * const format, ...)
-{
+
+
 va_list arguments;
 int j = 0, j, length = 0;
 
@@ -32,13 +27,12 @@ va_start(arguments, format);
 if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 	return (-1);
 
-
 while (format[j] != '\0')
 {
 	i = 0;
 	while (i <= 5)
 	{
-		if(m[i]->id[0] == format[j] && m[i]->id[1] == format[j+1])
+		if (m[i]->id[0] == format[j] && m[i]->id[1] == format[j + 1])
 		{
 			len += m[i]->f(args);
 		}
