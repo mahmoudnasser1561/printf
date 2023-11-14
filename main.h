@@ -22,7 +22,7 @@ int printf_mod(void);
 int printf_int(va_list args);
 int printf_char(va_list val);
 int printf_string(va_list val);
-int _printf(const char *fromat, ...);
+int _printf(const char *format, ...);
 int printf_dec(va_list args);
 int _putchar(char character);
 int _strlen(char *);
