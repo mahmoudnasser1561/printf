@@ -1,12 +1,11 @@
 #include "main.h"
-
 /**
  * _printf - is a function that selects the correct function to print.
  * @format: identifier to look for.
  * Return: the length of the string.
  */
 int _printf(const char * const format, ...)
-{
+{	
 	typedef struct format
 		{
 			char *id;
@@ -14,21 +13,30 @@ int _printf(const char * const format, ...)
 
 		} convert_match;
 
-	convert_match m[][2] = {
-		{"%s", printf_string},
-		{"%c", printf_char},
-		{"%%", printf_37},
-		{"%d", printf_int},
-		{"%i", printf_dec}
+	convert_match m[13][2] = {
+		{"%s", printf_string},      ['%', 's']  
+		{"%c", printf_char},        ['%', 'c']
+		{"%%", printf_37},          printf("Hello  %d", 20)
+		{"%i", printf_int}, 
+		{"%d", printf_dec}, 
+		{"%r", printf_srev},
+		{"%R", printf_rot13}, 
+		{"%b", printf_bin}, 
+		{"%u", printf_unsigned},
+		{"%o", printf_oct}, 
+		{"%x", printf_hex}, 
+		{"%X", printf_HEX},
+		{"%S", printf_exclusive_string}, 
+		{"%p", printf_pointer}
 	};
-
+	 
 
 	va_list args;
 	int i = 0, j, len = 0;
 
 	va_start(args, format);
                 // %d -> [%, o]
-		//
+		// 
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
 
@@ -37,17 +45,18 @@ int _printf(const char * const format, ...)
 	while (format[i] != '\0')
 	{
 		j = 0;
-		while (j <= 5)
+		while (j <= 13)
 		{
-
-			if (m[j]->id[0] == format[i] && m[j]->id[1] == format[i + 1])
+			m[0].id[0] == format[0]     m[0].id[1] == format[1]
+			if (m[j].id[0] == format[i] && m[j].id[1] == format[i + 1])
 			{
-				len += m[j]->f(args);
+				len += m[j].f(args);
 				i = i + 2;
-				// goto Here;
+				goto Here;
 			}
 			j++;
 		}
+		printf("I'm %- years old", 20)
 		_putchar(format[i]);
 		len++;
 		i++;
@@ -62,4 +71,15 @@ int _printf(const char * const format, ...)
  - m[13].id[1] == format[i + 1] // the character
 */
 
+printf("Hello % ", 20)
 
+
+m[13][2] {
+ {"%s"}, {%c}, {}, {}, {} , {} 
+}
+%c -> ['%', 'c'] i = 0 | 1
+
+
+
+
+j = 0; j <= 13 j++
