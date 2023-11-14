@@ -9,7 +9,7 @@ int _printf(const char * const format, ...)
 	convert_match m[] = {
 		{"%s", printf_string},
 		{"%c", printf_char},
-		{"%%", printf_mod},
+		{"%%", printf_37},
 		{"%d", printf_int},
 		{"%i", printf_dec}
 	};
