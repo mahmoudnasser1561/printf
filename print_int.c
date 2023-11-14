@@ -32,7 +32,7 @@ int printf_int(va_list args)
 			_putchar(digit + '0');
 			num = num - (digit *exp);
 			exp = exp / 10;
-			i++
+			i++;
 		}
 	}
 	_putchar(last + '0');
@@ -41,9 +41,9 @@ int printf_int(va_list args)
 /**
  *
  */
-int printf_dec(va list args)
+int printf_dec(va_list args)
 {
-	int n = va arg(args, int);
+	int n = va_arg(args, int);
 	int num, last = n % 10, digit;
 	int i = 1;
 	int exp = 1;
