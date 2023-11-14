@@ -28,9 +28,9 @@ while (format[j] != '\0')
 	i = 0;
 	while (i <= 5)
 	{
-		if (m[i]->id[0] == format[j] && m[i]->id[1] == format[j + 1])
+		if (m[i].id[0] == format[j] && m[i].id[1] == format[j + 1])
 		{
-			len += m[i]->f(args);
+			len += m[i].f(args);
 		}
 		i++;
 	}
