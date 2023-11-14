@@ -2,10 +2,10 @@
 /**
  * printf_char - a function that prints a char.
  * @val: argument
- * Return: only 1
+ * Return: only one
  *
  */
-int print_char(va_list val)
+int printf_char(va_list val)
 {
 	char s;
 
