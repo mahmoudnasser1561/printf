@@ -9,14 +9,14 @@ int _printf(const char * const format, ...)
 	convert_match m[] = {
 		{"%s", printf_string},
 		{"%c", printf_char},
-		{"%%", print_mod},
+		{"%%", printf_mod},
 		{"%d", printf_int},
 		{"%i", printf_dec}
 	};
 
 
 va_list arguments;
-int j = 0, j, length = 0;
+int i = 0, j, len = 0;
 
 va_start(arguments, format);
 
