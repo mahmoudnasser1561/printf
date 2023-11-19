@@ -10,41 +10,47 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int counter, c, num;
+	int counter, i, c;
 	char *str;
+	i = 0;
 	va_start (args, format);
 
 	while (*format)
 	{
-		if (*format == '%')
-		{    
-			format++; /*look at whats next to the %*/
-				if (*format == 's')
+		if (format[i] == '%')
+		{
+			while (format[i + 1] == ' ')
+			{
+				i++;
+			}
+				if (*(format + 1) == 'c')
 				{
-					char *str = va_arg(args, char*)
-					while(*str)
-					_putchar(*str);
-					counter++;
+				   	c = va_arg(args, int);
+					 _putchar(c);
+					 counter++;
+					 format = format + 1;
 				}
-				else if (*format == 'c')
+				else if ((*(format + 1) == '%'))
 				{
-					int c = va_arg(args, int)
-					_putchar(c);
+					_putchar('%');
 					counter++;
+					format = format + 1;
 				}
-				else if (*format == 'i' || *format == 'd')
+				else if ((*(format + 1) == 's'))
 				{
-					num = va_arg(args, int)
-					_putchar(num);
-					counter++;
+					str = va_arg(args, char*);
+					while (*str)
+					{
+						putchar(*str);
+						counter++;
+						str++;
+					}
+					format = format + 1;
+					continue;	
 				}
-				else if (*format == '%')
-				{
-					_Putchar('%')
-					counter++;
-				}
+		
 		}
-		else	/*if no %*/
+		else /*if no %*/
 		{
 			_putchar(*format);
 			counter++;

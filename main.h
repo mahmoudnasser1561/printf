@@ -5,6 +5,9 @@
 #include <stdarg.h>
 #include <stdlib.h>
 #include <unistd.h>
-int _putchar(args, c);
+int _putchar(char c);
+int _printf(const char *format, ...);
+void _print_number(int n);
+int _strlen(char *s);
 #endif
 
