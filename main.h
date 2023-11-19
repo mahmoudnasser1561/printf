@@ -9,5 +9,8 @@ int _putchar(char c);
 int _printf(const char *format, ...);
 void _print_number(int n);
 int _strlen(char *s);
+unsigned int handl_buf(char *buf, char c, unsigned int Inbuf);
+int print_buf(char *buf, unsigned int nbuf);
+
 #endif
 
