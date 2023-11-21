@@ -10,9 +10,10 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int counter, i, c;
+	int counter, i, c, num;
 	char *str;
 	i = 0;
+	num = 0;
 	va_start (args, format);
 
 	while (*format)
@@ -47,6 +48,12 @@ int _printf(const char *format, ...)
 					}
 					format = format + 1;
 					continue;	
+				}
+				else if (*(format + 1) == 'd' || *(format + 1) == 'i')
+				{
+					_print_number(num);
+					counter++;
+					format = format + 1;
 				}
 		
 		}
