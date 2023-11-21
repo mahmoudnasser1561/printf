@@ -46,6 +46,7 @@ int _printf(const char *format, ...)
 						counter++;
 						str++;
 					}
+					format = format + 1;
 					continue;	
 				}
 				else if (*(format + 1) == 'd' || *(format + 1) == 'i')
