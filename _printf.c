@@ -26,7 +26,7 @@ int _printf(const char *format, ...)
 			}
 				if (*(format + 1) == 'c')
 				{
-				   	c = va_arg(args, int);
+					c = va_arg(args, int);
 					 _putchar(c);
 					 counter++;
 					 format = format + 1;
@@ -45,7 +45,7 @@ int _printf(const char *format, ...)
 						counter++;
 						str++;
 					}
-					format = format + 1;	
+					format = format + 1;
 				}
 				else if (*(format + 1) == 'd' || *(format + 1) == 'i')
 				{
@@ -53,7 +53,6 @@ int _printf(const char *format, ...)
 					counter++;
 					format = format + 1;
 				}
-		
 		}
 		else /*if no %*/
 		{
