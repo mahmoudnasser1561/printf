@@ -5,16 +5,17 @@
  * _printf - produces output according to a format.
  * @format:the string parmeter passed by the Func.
  *  @...: A variable number of paramters to calculate the sum of.
- * Returns: the number of characters printed excluding \0
+ * Return: the number of characters printed
  */
 int _printf(const char *format, ...)
 {
 	va_list args;
 	int counter, i, c, num;
 	char *str;
+
 	i = 0;
 	num = 0;
-	va_start (args, format);
+	va_start(args, format);
 
 	while (*format)
 	{
