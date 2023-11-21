@@ -42,7 +42,7 @@ int _printf(const char *format, ...)
 					str = va_arg(args, char*);
 					while (*str)
 					{
-						putchar(*str);
+						_putchar(*str);
 						counter++;
 						str++;
 					}
