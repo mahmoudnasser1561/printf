@@ -35,7 +35,6 @@ int _printf(const char *format, ...)
 				{
 					_putchar('%');
 					counter++;
-					format = format + 1;
 				}
 				else if ((*(format + 1) == 's'))
 				{
